@@ -1,0 +1,29 @@
+package HashmapSingleton;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ServiceCache {
+	private final Map<String, Service> serviceCache;
+
+	  public   ServiceCache() {
+	    serviceCache = new HashMap<>();
+	  }
+	   
+	  Service getService(String serviceName) {
+	        Service cachedService = null;
+	        for (String Name : serviceCache.keySet()) {
+	          if (Name.equals(serviceName)) {
+	            cachedService = serviceCache.get(Name);
+	            System.out.println("(cache call) Fetched service " + cachedService.getName() + "("
+	             + ") from cache... !");
+	          }
+	        }
+			return cachedService;
+	        
+	        
+	       
+
+	  }
+
+}
